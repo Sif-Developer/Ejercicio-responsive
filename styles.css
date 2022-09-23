@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    font-family: 'IM Fell English', serif;
+    font-size: 1.2rem;
+    min-height: 100%;
+}
+
+.grid-container > * {
+    box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.75);
+    border-radius: 4px ;
+    padding: 10px;
+    text-align: center;
+}
+
+
+.header{
+    grid-area: header;
+    background-color: lightblue;
+}
+
+.hero{
+    grid-area: hero;
+    background-color: lightcoral;
+}
+
+.content{
+    grid-area: content;
+    background-color: lightgreen;
+}
+
+.sidebar{
+    grid-area: sidebar;
+    background-color: purple;
+}
+
+.footer{
+    grid-area: footer;
+    background-color: lightgray;
+    
+}
+
+/* MOVIL 0-767px */
+.grid-container {
+    display: grid;
+    gap: 10px;
+    grid-template:
+      "header"  50px
+      "hero"  150px
+      "content"    auto
+      "sidebar" 150px
+      "footer"  50px;
+}
+/* Tablet 767-1080px */
+@media (min-width: 767px ) and (max-width:1080px){
+    .grid-container{
+        grid-template: 
+        "header      header" 50px
+        "hero    hero" 150px
+        "content   sidebar" auto
+        "footer    footer" 50px / 
+        70% auto;
+               
+
+    }
+
+    @media (min-width: 900px) {
+        .grid-container {
+          grid-template:
+            "header  header header"  100px
+            " hero " auto
+            "auto content sidebar " 
+            "footer footer footer"
+        }
